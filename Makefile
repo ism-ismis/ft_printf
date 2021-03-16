@@ -21,6 +21,8 @@ all:		$(NAME)
 clean:
 			$(RM) $(OBJS)
 fclean:		clean
-			$(RM) $(NAME)
+			$(RM) $(NAME) test
 re:			fclean all
+test:		$(NAME)
+			$(CC) -L. -lftprintf -o test test.c
 .PHONY:	all clean fclean re
